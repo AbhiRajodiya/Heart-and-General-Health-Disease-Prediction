@@ -2,8 +2,8 @@
 Using Django Framework
 
 setup guide:-
- pip install scikit-learn
- pip install pandas
+pip install scikit-learn
+pip install pandas
 pip install numpy 
 pip install matplotlib
 pip install seaborn 
