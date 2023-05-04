@@ -1,4 +1,5 @@
 # Heart-and-General-Health-Disease-Prediction
+Using Django Framework
 
 setup guide:-
  pip install scikit-learn
