@@ -1,0 +1,114 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+	<section class="logins py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<div class="title-section mb-md-5 mb-4">
+				<h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Heart Prediction Output</h3>
+			</div><hr/>
+			<div class="login px-sm-12" style="width:100%">
+
+                <h2 align='center' style="font-weight:bold; color : black ;margin-top:0%">Prediction output</h2><hr><center><p><h3><b>Result </b></h3>
+                {% if pred == "1" %}
+                <h3><span style='color:green'>You are healthy.</span><h3>
+                {% else %}
+                <h3><span style='color:red'>You are Unhealthy, Need to Checkup.</span></h3>
+                {% endif %}
+
+            </p></center>
+
+			</div>
+            {% if pred != "1" %}
+
+            <div class="container-fluid" style="width:90%;margin-top:3%">
+                    <div class="container-fluid">
+                        <h3 align="center" style="font-weight:bold;font-family : 'Serif' ; color : #E6120E ;margin-top:4%">You may contact this Doctor</h3>
+                         </div><hr>
+                                <table id="example" class="display" style="width:100%">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>Image</th>
+                                      <th>Full Name</th>
+                                      <th>Email</th>
+                                      <th>Contact</th>
+                                      <th>Address</th>
+
+                                  </tr>
+                              </thead>
+                              <tbody>
+                              {% for i in doctor %}
+                                <tr>
+                                  <td>{{forloop.counter}}</td>
+                                  <td><img src="{{i.image.url}}" style="width:80px;height:90px"></td>
+                                  <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+                                  <td>{{i.user.email}}</td>
+                                  <td>{{i.contact}}</td>
+                                  <td>{{i.address}}</td>
+                              </tr>
+                              {% empty %}
+                              <tr>
+                                <th>1</th>
+                                <th><img src="{% static "img\jesky.jpg" %}" style="width:80px;height:90px"></th>
+                                <th>jesky hobs</th>
+                                <th>jesky123455@gmail.com</th>
+                                <th>9909910054</th>
+                                <th>home town ,canada</th>
+
+                            </tr>
+                            <tr>
+                              <th>2</th>
+                                <th><img src="{% static "img\westry.jpg" %}"style="width:80px;height:90px"></th>
+                                <th>westry valkan</th>
+                                <th>valkan7778@gmail.com</th>
+                                <th>11223910054</th>
+                                <th>jacksan palace, ukrain</th>
+
+                            </tr>
+                            <tr>
+                              <th>3</th>
+                                <th><img src="{% static "img\harry.jpg" %}"style="width:80px;height:90px"></th>
+                                <th>harry jackshan</th>
+                                <th>harr55778@gmail.com</th>
+                                <th>9902342134</th>
+                                <th>harna suparn ,ukrain</th>
+
+                            </tr>
+                            <tr>
+                              <th>4</th>
+                                <th><img src="{% static "img\varna.jpg" %}"style="width:80px;height:90px"></th>
+                                <th>varna halken</th>
+                                <th>halken55778@gmail.com</th>
+                                <th>99022334234</th>
+                                <th>bessai foart ,dubai</th>
+
+                            </tr>
+                            <tr>
+                              <th>5</th>
+                                <th><img src="{% static "img\garbay.jpg" %}"style="width:80px;height:90px"></th>
+                                <th>garbay jumsi</th>
+                                <th>jumsiga778@gmail.com</th>
+                                <th>15261334234</th>
+                                <th>sahar towar,dubai</th>
+
+                            </tr>
+                            <tr>
+                              <th>6</th>
+                                <th><img src="{% static "img\vekari.jpg" %}"style="width:80px;height:90px"></th>
+                                <th>vekari samsi</th>
+                                <th>vekari7008@gmail.com</th>
+                                <th>15261324564</th>
+                                <th>california, united stats</th>
+
+                            </tr>
+
+                              {% endfor %}
+                          </tbody>
+                      </table>
+                  </div>
+            {% endif %}
+		</div>
+	</section>
+
+{% endblock %}
